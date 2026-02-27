@@ -1275,7 +1275,7 @@ POST   /api/v1/subscriptions/:id/mark-cancelled # Отметить как отм
 
 ## AI Agent Skills для проекта
 
-> Скиллы подключены в `.agents/skills/` и автоматически используются GitHub Copilot, Cursor, Codex и другими AI-агентами в этом проекте.
+> Скиллы подключены в `skills/` и автоматически используются GitHub Copilot, Cursor, Codex и другими AI-агентами в этом проекте.
 > Добавить новый скилл: `npx --yes skills add <owner/repo@skill-name> --all --copy`
 
 | # | Скилл | Назначение |

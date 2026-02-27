@@ -2350,7 +2350,7 @@ multiSub/                       ← корень репозитория
 │   │   ├── mobile.yml         ← RN: lint + test + EAS build
 │   │   └── pr-check.yml       ← проверки для любого PR
 │   └── PULL_REQUEST_TEMPLATE.md
-├── .agents/skills/             ← AI Agent скиллы (коммитятся в репо)
+├── skills/                     ← AI Agent скиллы (коммитятся в репо)
 ├── apps/
 │   ├── backend/               ← Go API-сервер
 │   ├── web/                   ← Next.js веб-приложение
