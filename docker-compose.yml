@@ -1,0 +1,41 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: multisub-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: multisub
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./apps/backend
+      dockerfile: Dockerfile
+    container_name: multisub-api
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      APP_ENV: development
+      PORT: 8080
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/multisub?sslmode=disable
+      JWT_SECRET: dev-secret-change-in-production-min-32-chars
+      CORS_ORIGINS: http://localhost:3000
+    volumes:
+      - ./apps/backend:/app
+
+volumes:
+  pgdata:
