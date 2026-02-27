@@ -1273,26 +1273,24 @@ POST   /api/v1/subscriptions/:id/mark-cancelled # Отметить как отм
 
 ---
 
-## 🧠 AI Agent Skills для проекта
+## AI Agent Skills для проекта
 
-> Скиллы подключены в `.agents/skills/` и автоматически используются GitHub Copilot, Cursor, Codex и другими AI-агентами в этом проекте.  
-> Если нужно добавить новый скилл: `npx --yes skills add <owner/repo@skill-name> -y`
+> Скиллы подключены в `.agents/skills/` и автоматически используются GitHub Copilot, Cursor, Codex и другими AI-агентами в этом проекте.
+> Добавить новый скилл: `npx --yes skills add <owner/repo@skill-name> --all --copy`
 
-| # | Скилл | Цель |
-|---|-------|------|
+| # | Скилл | Назначение |
+|---|-------|-----------|
 | 1 | `vercel-react-best-practices` | Лучшие практики React / Next.js от Vercel Engineering |
 | 2 | `vercel-react-native-skills` | React Native: паттерны, перформанс, типичные ошибки |
 | 3 | `vercel-composition-patterns` | Server / Client Component паттерны Next.js App Router |
+| 4 | `web-design-guidelines` | Vercel web design guidelines — визуальные и UX стандарты |
+| 5 | `frontend-design` | Принципы проектирования UI: без эмодзи, react-icons, CSS tokens |
+| 6 | `golang-pro` | Go 1.22+ + Fiber v3: идиоматичный бэкенд, sqlc, pgx, slog |
 
-**Установка дополнительных скиллов:**
+**Правила использования скиллов в этом проекте:**
 
-```bash
-# React Native от Callstack
-npx --yes skills add callstackincubator/agent-skills@react-native-best-practices -y
-
-# Next.js App Router паттерны
-npx --yes skills add wshobson/agents@nextjs-app-router-patterns -y
-
-# GitHub Actions шаблоны
-npx --yes skills add wshobson/agents@github-actions-templates -y
-```
+- Все иконки — только из `react-icons` (никаких эмодзи, никаких других icon-библиотек)
+- При работе с Go: следовать паттернам из скилла `golang-pro` (Fiber v3, sqlc, table-driven tests)
+- При работе с Next.js: применять `vercel-react-best-practices` + `vercel-composition-patterns`
+- При работе с React Native: применять `vercel-react-native-skills`
+- При проектировании UI: применять `web-design-guidelines` + `frontend-design`
