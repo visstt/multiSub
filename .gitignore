@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+*.exe
+*.test
+
+# Go
+vendor/
+*.sum.bak
+tmp/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+.env.production
+
+# IDE & OS
+.vscode/settings.json
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Test coverage
+coverage/
+*.out
+
+# Expo / React Native
+.expo/
+android/
+ios/
+
+# Docker
+.dockerignore
+
+# Terraform / infra secrets
+*.tfstate
+*.tfstate.backup
+.terraform/
